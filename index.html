@@ -9,6 +9,25 @@
 <body>
   <h1>Shopping List</h1>
   <div ng-controller="ShoppingController">
+
+    <input type="text" name="todoName" size="30" placeholder="Enter your Grocery item here" ng:required />
+  Amount:
+    <select name="todoEstimate">
+        <option ng:repeat="estimate in estimates" value="{{estimate}}">{{estimate}}</option>
+    </select>
+    <button ng:click="addTodo()">Add</button>
+  <hr />
+    <form name="itemForm" ng-submit="addItem()" novalidate>  
+      <label>Item Name</label>  
+      <input type="text" ng-model="newItem.name" required /><br>  
+      <label>Quantity</label>  
+      <input type="number" ng-model="newItem.quantity"/><br> 
+      <input ng-model="newItem.done" type="hidden"  value=false>
+      <button>Submit</button>  
+    </form>
+
+
+    <h2>List</h2>
     <ul ng-repeat="item in items">
       <li>{{item}}</li>
     </ul>
