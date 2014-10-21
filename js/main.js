@@ -8,7 +8,18 @@
     $scope.newItem = false;
 
     $scope.addItem = function () {
-      $scope.items.push($scope.newItem)
+      $scope.items.push({
+        name: $scope.newItem.name,
+        quantity: $scope.newItem.quantity,
+        done: false
+      });
+
+
+        // this.todos.push({
+        //     name: this.todoName,
+        //     estimate: this.todoEstimate,
+        //     done: false
+        // });
       $scope.newItem = false;
       $scope.itemForm.$setPristine()      
     }
