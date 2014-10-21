@@ -1,0 +1,17 @@
+<html ng-app="shoppingListApp">
+<head>
+  <title>Shopping List</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>Shopping List</h1>
+  <div ng-controller="ShoppingController">
+    <ul ng-repeat="item in items">
+      <li>{{item}}</li>
+    </ul>
+  </div>
+</body>
+</html>
