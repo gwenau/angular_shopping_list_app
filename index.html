@@ -19,7 +19,7 @@
     <hr />
     <h2>List</h2>
     <ul ng-repeat="item in items">
-      <li>{{item}}</li>
+      <li><button ng-click="removeItem(item)">Delete</button>{{item.name}} ({{item.quantity}})</li>
     </ul>
   </div>
 </body>
