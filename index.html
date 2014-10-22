@@ -19,7 +19,19 @@
     <hr />
     <h2>List</h2>
     <ul ng-repeat="item in items">
-      <li><button ng-click="removeItem(item)">Delete</button>{{item.name}} ({{item.quantity}})</li>
+      <li><button ng-click="removeItem(item)">Delete</button><button ng-click="editItem(item)">Edit</button>{{item.name}} ({{item.quantity}})
+<!--       <form name="itemForm" ng-submit="addItem()">  
+        <label>Item Name</label>  
+        <input type="text" ng-model="newItem.name" required /><br>  
+        <label>Quantity</label>  
+        <input type="number" ng-model="newItem.quantity"/><br> 
+        <button>Submit</button>  
+      </form> -->
+        <div ng-show="edit">
+          <!-- input -->
+          <button ng-click="update(item)"></button>
+        </div>
+      </li>
     </ul>
   </div>
 </body>

@@ -42,6 +42,17 @@
       }
     }
 
+    $scope.editItem = function (item){
+      console.log(item);
+      $scope.edit = true;
+    }
+
+    $scope.update = function (item){
+      console.log("update", item)
+
+      $scope.edit = false;
+    }
+
   }])
 
 })();
