@@ -1,3 +1,4 @@
+// Commented version
 (function() {
 
   var app = angular.module('shoppingListApp', ['ngAnimate']);
