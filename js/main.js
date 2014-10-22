@@ -1,4 +1,3 @@
-
 (function() {
 
   var app = angular.module('shoppingListApp', ['ngAnimate']);
@@ -10,7 +9,7 @@
 
     $scope.addItem = function () {
 
-    var id = $scope.items.length + 1;
+      var id = $scope.items.length + 1;
       
       $scope.items.push({
         id: id,
