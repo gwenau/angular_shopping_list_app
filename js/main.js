@@ -5,7 +5,7 @@
   app.controller('ShoppingController' , ["$scope" ,function($scope) {
 
     $scope.items = [];
-    $scope.newItem = false;
+    $scope.item = false;
 
     $scope.addItem = function () {
 
@@ -13,11 +13,11 @@
 
       $scope.items.push({
         id: id,
-        name: $scope.newItem.name,
-        quantity: $scope.newItem.quantity,
+        name: $scope.item.name,
+        quantity: $scope.item.quantity,
         done: false
       });
-      $scope.newItem = false;
+      $scope.item = false;
       $scope.itemForm.$setPristine();      
     }
 
@@ -44,7 +44,7 @@
 
     $scope.editItem = function (item){
       console.log(item);
-      $scope.newItem = item;
+      $scope.item = item;
       $scope.saveButton = true;
       // $scope.edit = true;
     }
@@ -52,7 +52,7 @@
     $scope.update = function (item){
       console.log("update", item)
       $scope.saveButton = false;
-      $scope.newItem = false;
+      $scope.item = false;
       $scope.itemForm.$setPristine(); 
       // $scope.edit = false;
     }

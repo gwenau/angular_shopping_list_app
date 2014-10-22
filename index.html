@@ -11,9 +11,9 @@
   <div ng-controller="ShoppingController">
     <form novalidate name="itemForm">  
       <label>Item Name</label>  
-      <input type="text" ng-model="newItem.name" required /><br>  
+      <input type="text" ng-model="item.name" required /><br>  
       <label>Quantity</label>  
-      <input type="number" ng-model="newItem.quantity" min="1" required/><br> 
+      <input type="number" ng-model="item.quantity" min="1" required/><br> 
       <button ng-hide="saveButton" ng-click="addItem()">Add</button><button ng-show="saveButton" ng-click="update()">Save</button>
     </form>
     <hr />
