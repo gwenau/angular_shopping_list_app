@@ -18,7 +18,7 @@
         done: false
       });
       $scope.newItem = false;
-      $scope.itemForm.$setPristine()      
+      $scope.itemForm.$setPristine();      
     }
 
     $scope.removeItem = function (item) {
@@ -44,13 +44,17 @@
 
     $scope.editItem = function (item){
       console.log(item);
-      $scope.edit = true;
+      $scope.newItem = item;
+      $scope.saveButton = true;
+      // $scope.edit = true;
     }
 
     $scope.update = function (item){
       console.log("update", item)
-
-      $scope.edit = false;
+      $scope.saveButton = false;
+      $scope.newItem = false;
+      $scope.itemForm.$setPristine(); 
+      // $scope.edit = false;
     }
 
   }])

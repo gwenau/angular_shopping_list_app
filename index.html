@@ -9,28 +9,17 @@
 <body>
   <h1>Shopping List</h1>
   <div ng-controller="ShoppingController">
-    <form name="itemForm" ng-submit="addItem()">  
+    <form novalidate name="itemForm">  
       <label>Item Name</label>  
       <input type="text" ng-model="newItem.name" required /><br>  
       <label>Quantity</label>  
-      <input type="number" ng-model="newItem.quantity"/><br> 
-      <button>Submit</button>  
+      <input type="number" ng-model="newItem.quantity" min="1" required/><br> 
+      <button ng-hide="saveButton" ng-click="addItem()">Add</button><button ng-show="saveButton" ng-click="update()">Save</button>
     </form>
     <hr />
     <h2>List</h2>
     <ul ng-repeat="item in items">
-      <li><button ng-click="removeItem(item)">Delete</button><button ng-click="editItem(item)">Edit</button>{{item.name}} ({{item.quantity}})
-<!--       <form name="itemForm" ng-submit="addItem()">  
-        <label>Item Name</label>  
-        <input type="text" ng-model="newItem.name" required /><br>  
-        <label>Quantity</label>  
-        <input type="number" ng-model="newItem.quantity"/><br> 
-        <button>Submit</button>  
-      </form> -->
-        <div ng-show="edit">
-          <!-- input -->
-          <button ng-click="update(item)"></button>
-        </div>
+      <li><button ng-click="removeItem(item)">Delete</button><button ng-click="editItem(item)">Edit</button><div ng-hide="edit">{{item.name}} ({{item.quantity}})</div>
       </li>
     </ul>
   </div>
