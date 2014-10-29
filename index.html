@@ -2,26 +2,40 @@
 <head>
   <title>Shopping List</title>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular-animate.js"></script>
   <script src="js/main.js"></script>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1>Shopping List</h1>
-  <div ng-controller="ShoppingController">
-    <form novalidate name="itemForm">  
-      <label>Item Name</label>  
-      <input type="text" ng-model="item.name" required /><br>  
-      <label>Quantity</label>  
-      <input type="number" ng-model="item.quantity" min="1" required/><br> 
-      <button ng-hide="saveButton" ng-click="addItem()">Add</button><button ng-show="saveButton" ng-click="update()">Save</button>
-    </form>
-    <hr />
-    <h2>List</h2>
-    <ul ng-repeat="item in items">
-      <li><button ng-click="removeItem(item)">Delete</button><button ng-click="editItem(item)">Edit</button><div ng-hide="edit">{{item.name}} ({{item.quantity}})</div>
-      </li>
-    </ul>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-6">
+        <h1>Shopping List</h1>
+        <div ng-controller="ShoppingController">
+          <form novalidate name="itemForm">  
+            <div class="form-group">
+              <label>Item Name</label>  
+              <input type="text" class="form-control" ng-model="item.name" required />
+            </div>
+            <div class="form-group">  
+              <label>Quantity</label>  
+              <input type="number" class="form-control" ng-model="item.quantity" min="1" required/><br> 
+            </div>
+            <button class="btn btn-primary" ng-hide="saveButton" ng-click="addItem()">Add</button><button ng-show="saveButton" ng-click="update()">Save</button>
+          </form>
+          <hr />
+          <h2>List</h2>
+          <ul ng-repeat="item in items">
+            <li>
+              <div>{{item.name}} ({{item.quantity}})</div>
+              <button ng-click="removeItem(item)" class="btn btn-danger">Delete</button>
+              <button ng-click="editItem(item)" class="btn btn-primary">Edit</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
 </body>
 </html>

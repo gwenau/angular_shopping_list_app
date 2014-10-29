@@ -1,16 +1,14 @@
 (function() {
 
-  var app = angular.module('shoppingListApp', ['ngAnimate']);
+  var app = angular.module('shoppingListApp', []);
 
-  app.controller('ShoppingController' , ["$scope", "$http" ,function($scope, $http) {
+  app.controller('ShoppingController' , ["$scope", function($scope) {
 
     $scope.items = [];
     $scope.item = false;
 
     $scope.addItem = function () {
-
       var id = $scope.items.length + 1;
-      
       $scope.items.push({
         id: id,
         name: $scope.item.name,
