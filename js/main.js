@@ -2,7 +2,7 @@
 
   var app = angular.module('shoppingListApp', ['ngAnimate']);
 
-  app.controller('ShoppingController' , ["$scope" ,function($scope) {
+  app.controller('ShoppingController' , ["$scope", "$http" ,function($scope, $http) {
 
     $scope.items = [];
     $scope.item = false;
