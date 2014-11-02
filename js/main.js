@@ -6,6 +6,7 @@
 
     $scope.items = [];
     $scope.item = false;
+    $scope.totalNumber = 0;
 
     $scope.addItem = function () {
       var id = $scope.items.length + 1;
@@ -16,7 +17,10 @@
         done: false
       });
       $scope.item = false;
-      $scope.itemForm.$setPristine();      
+      $scope.itemForm.$setPristine(); 
+      for(var i=0; i<$scope.items.length; i++){
+        $scope.totalNumber = $scope.totalNumber + $scope.items[i].quantity
+      }
     }
 
     $scope.removeItem = function (item) {

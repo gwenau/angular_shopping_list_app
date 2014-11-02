@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-xs-6">
         <h1>Shopping List</h1>
-        <div ng-controller="ShoppingController">
+        <!-- <div ng-controller="ShoppingController"> -->
           <form novalidate name="itemForm">  
             <div class="form-group">
               <label>Item Name</label>  
@@ -32,6 +32,9 @@
               <button ng-click="editItem(item)" class="btn btn-primary">Edit</button>
             </li>
           </ul>
+          <hr />
+          <h2>Total</h2>
+          <p>Number of items to buy from the shop: {{ totalNumber }}</p>
         </div>
       </div>
 
