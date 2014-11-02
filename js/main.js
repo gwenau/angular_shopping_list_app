@@ -30,14 +30,14 @@
     }
 
     $scope.removeItem = function (item) {
-      $scope.remove($scope.items, item)
+      $scope.remove($scope.items, item);
+      $scope.total = $scope.total - item.quantity;
     }
 
     $scope.remove = function (arr, item) {
       for (var i = 0, l = arr.length; i < l; i++) {
           if (arr[i] === item) {
               arr.splice(i, 1);
-              // $scope.totalNumber = $scope.totalNumber - $scope.items[i].quantity
           }
       }
     }

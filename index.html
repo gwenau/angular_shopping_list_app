@@ -28,7 +28,7 @@
           <ul ng-repeat="item in items">
             <li>
               <div>{{item.name}} ({{item.quantity}})</div>
-              <button ng-click="removeItem(item)" class="btn btn-danger">Delete</button>
+              <button ng-click="removeItem(item); totalSubtraction()" class="btn btn-danger">Delete</button>
               <button ng-click="editItem(item)" class="btn btn-primary">Edit</button>
             </li>
           </ul>
