@@ -6,7 +6,15 @@
 
     $scope.items = [];
     $scope.item = false;
-    $scope.totalNumber = 0;
+    $scope.total = 0;
+
+    $scope.totalAll = function () {
+      var totalNumber = 0;
+      for(var i=0; i<$scope.items.length; i++){
+        totalNumber = totalNumber + $scope.items[i].quantity;
+      };
+      return totalNumber
+    }
 
     $scope.addItem = function () {
       var id = $scope.items.length + 1;
@@ -17,10 +25,8 @@
         done: false
       });
       $scope.item = false;
-      $scope.itemForm.$setPristine(); 
-      for(var i=0; i<$scope.items.length; i++){
-        $scope.totalNumber = $scope.totalNumber + $scope.items[i].quantity
-      }
+      $scope.itemForm.$setPristine();
+      $scope.total = $scope.totalAll();
     }
 
     $scope.removeItem = function (item) {
@@ -31,6 +37,7 @@
       for (var i = 0, l = arr.length; i < l; i++) {
           if (arr[i] === item) {
               arr.splice(i, 1);
+              // $scope.totalNumber = $scope.totalNumber - $scope.items[i].quantity
           }
       }
     }

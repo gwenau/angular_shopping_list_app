@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-xs-6">
         <h1>Shopping List</h1>
-        <!-- <div ng-controller="ShoppingController"> -->
+        <div ng-controller="ShoppingController">
           <form novalidate name="itemForm">  
             <div class="form-group">
               <label>Item Name</label>  
@@ -21,7 +21,7 @@
               <label>Quantity</label>  
               <input type="number" class="form-control" ng-model="item.quantity" min="1" required/><br> 
             </div>
-            <button class="btn btn-primary" ng-hide="saveButton" ng-click="addItem()">Add</button><button ng-show="saveButton" ng-click="update()">Save</button>
+            <button class="btn btn-primary" ng-hide="saveButton" ng-click="addItem(); totalAll()">Add</button><button ng-show="saveButton" ng-click="update()">Save</button>
           </form>
           <hr />
           <h2>List</h2>
@@ -34,7 +34,7 @@
           </ul>
           <hr />
           <h2>Total</h2>
-          <p>Number of items to buy from the shop: {{ totalNumber }}</p>
+          <p>Number of items to buy from the shop: {{ total }}</p>
         </div>
       </div>
 
